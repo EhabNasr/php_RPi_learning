@@ -2,8 +2,6 @@
     <input type="submit" value="ON" name="on">
     <input type="submit" value="OFF" name="off">
     <br>
-    <p>LED is </p>
-    <p id="state"></p>
 </form>
 <?php
 exec("gpio mode 15 out");
