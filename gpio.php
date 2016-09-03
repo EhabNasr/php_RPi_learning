@@ -7,13 +7,19 @@
 </form>
 <?php
 exec("gpio mode 15 out");
-while (1) {
-    if (isset($_GET['on'])) {
-        exec("gpio write 15 1");
-        echo "LED is on";
-    } else if (isset($_GET['off'])) {
-        exec("gpio -g write 17 0");
-        echo "LED is off";
+if(isset($_GET['on'])){
+    exec("gpio write 15 1");
+    echo "LED is on";}
+else if(isset($_GET['off'])){
+    exec("gpio -g write 17 0");
+    echo "LED is off";}
+    while (1){
+        $gpio_status = exec("gpio read 15");
+        if($gpio_status == '1'){
+            echo "On";
+        } else{
+            echo "OFF";
+        }
+
     }
-}
 ?>
