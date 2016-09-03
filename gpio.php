@@ -9,6 +9,6 @@ if(isset($_GET['on'])){
     exec("gpio write 15 1");
     echo "LED is on";}
 else if(isset($_GET['off'])){
-    exec("gpio -g write 17 0");
+    exec("gpio write 15 0");
     echo "LED is off";}
 ?>
