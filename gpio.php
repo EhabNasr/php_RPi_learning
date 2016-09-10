@@ -15,14 +15,18 @@
 </html>
 <?php
     exec("gpio mode 14 out");
+    $gpio_status = exec("gpio read 14");
     if(isset($_GET['on'])){
         exec("gpio write 14 1");
-        echo "LED is on";}
+//        echo "LED is on";
+    }
     else if(isset($_GET['off'])){
         exec("gpio write 14 0");
-        echo "LED is off";}
-    if(isset($_GET['check'])){
+//        echo "LED is off";
+    }
+    while (true){
         $gpio_status = exec("gpio read 14");
         echo $gpio_status;
     }
+
 ?>
