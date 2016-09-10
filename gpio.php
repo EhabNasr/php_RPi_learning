@@ -31,8 +31,10 @@
     }
     if(isset($_GET['lock'])){
         echo exec("sudo ./C_Lock/openDoor");
+        echo "Door is open";
     }
     if(isset($_GET['closelock'])){
         echo exec("sudo ./C_Lock/closeDoor");
+        echo "Door is closed";
     }
 ?>
