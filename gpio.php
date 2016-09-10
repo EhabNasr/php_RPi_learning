@@ -11,7 +11,7 @@
     <br>
     <input type="submit" value="Check Lights" name="check">
     <br>
-    <input type="submit" value="Open Door" name="lock">
+    <input type="submit" value="Open Door" name="openlock">
     <input type="submit" value="Close Door" name="closelock">
 
 
@@ -22,14 +22,15 @@
     exec("gpio mode 14 out");
     $gpio_status = exec("gpio read 14");
     if(isset($_GET['on'])){
-        exec("gpio write 14 1");
-//        echo "LED is on";
+        exec("gpio write 14 0"); //Negative Logic
     }
-    else if(isset($_GET['off'])){
+    if(isset($_GET['off'])){
         exec("gpio write 14 0");
-//        echo "LED is off";
     }
-    if(isset($_GET['lock'])){
+    if(isset($_GET['off'])){
+        exec("gpio write 14 1"); //Negative Logic
+    }
+    if(isset($_GET['openlock'])){
         echo exec("sudo ./C_Lock/openDoor");
         echo "Door is open";
     }
