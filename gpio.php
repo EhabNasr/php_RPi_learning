@@ -10,6 +10,9 @@
     <input type="submit" value="OFF" name="off">
     <br>
     <input type="submit" value="Check Lights" name="check">
+    <br>
+    <input type="submit" value="Open Door" name="lock">
+
 </form>
 </body>
 </html>

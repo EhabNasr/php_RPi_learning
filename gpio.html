@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>GPIO</title>
 </head>
+<script type="javascript" charset="utf-8">
+    function getUpdate() {
+        $.ajax(
+                {
+            url:"gpio.php",
+                    async: true,
+                    cache: false,
+                    timeout: 50000,
+                    success: function () {
+                        
+                    }
+                    
+                }
+        )
+    }
+</script>
 <body>
     <form method="get" action="gpio.php">
         <input type="submit" value="ON" name="on">
