@@ -9,6 +9,7 @@
     <input type="submit" value="ON" name="on">
     <input type="submit" value="OFF" name="off">
     <br>
+    <input type="submit" value="Check Lights" name="check">
 </form>
 </body>
 </html>
@@ -20,4 +21,8 @@
     else if(isset($_GET['off'])){
         exec("gpio write 14 0");
         echo "LED is off";}
+    if(isset($_GET['check'])){
+        $gpio_status = exec("gpio read 14");
+        echo $gpio_status;
+    }
 ?>
