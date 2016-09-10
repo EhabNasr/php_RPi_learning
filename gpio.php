@@ -24,7 +24,9 @@
         exec("gpio write 14 0");
 //        echo "LED is off";
     }
-    $gpio_status = exec("gpio read 14");
-    echo $gpio_status;
+    while (true == true) {
+        $gpio_status = exec("gpio read 14");
+        echo $gpio_status;
+    }
 
 ?>
