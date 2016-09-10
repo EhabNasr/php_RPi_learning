@@ -12,6 +12,8 @@
     <input type="submit" value="Check Lights" name="check">
     <br>
     <input type="submit" value="Open Door" name="lock">
+    <input type="submit" value="Close Door" name="closelock">
+
 
 </form>
 </body>
@@ -30,5 +32,7 @@
     if(isset($_GET['lock'])){
         echo exec("sudo ./C_Lock/openDoor");
     }
-
+    if(isset($_GET['closelock'])){
+        echo exec("sudo ./C_Lock/closeDoor");
+    }
 ?>
