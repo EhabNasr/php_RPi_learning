@@ -13,11 +13,11 @@
 </body>
 </html>
 <?php
-    exec("gpio mode 15 out");
+    exec("gpio mode 14 out");
     if(isset($_GET['on'])){
-        exec("gpio write 15 1");
+        exec("gpio write 14 1");
         echo "LED is on";}
     else if(isset($_GET['off'])){
-        exec("gpio write 15 0");
+        exec("gpio write 14 0");
         echo "LED is off";}
 ?>
