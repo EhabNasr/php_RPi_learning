@@ -27,9 +27,8 @@
         exec("gpio write 14 0");
 //        echo "LED is off";
     }
-    while (true == true) {
-        $gpio_status = exec("gpio read 14");
-        echo $gpio_status;
+    if(isset($_GET['lock'])){
+        exec("sudo ./C_Lock/openDoor");
     }
 
 ?>
