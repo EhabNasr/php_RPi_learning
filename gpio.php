@@ -28,7 +28,7 @@
 //        echo "LED is off";
     }
     if(isset($_GET['lock'])){
-        exec("sudo ./C_Lock/closeDoor");
+        echo exec("sudo ./C_Lock/closeDoor");
     }
 
 ?>
